@@ -15,9 +15,16 @@ target_link_libraries(example
   m
   )
 
+# Build aufgabe5
+add_executable(aufgabe5
+  aufgabe5.cpp
+  )
+target_link_libraries(example
+  m
+  )
+
 # Build tests
 add_executable(tests
-  vec2.cpp
   tests.cpp
   )
 target_link_libraries(tests
