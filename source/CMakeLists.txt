@@ -4,14 +4,16 @@ add_executable(example
   vec2.cpp
   )
 target_link_libraries(example
-  m)
+  m
+  )
   
 # Build aufgabe2bis4
 add_executable(aufgabe2bis4
   aufgabe2bis4.cpp
   )
 target_link_libraries(example
-  m)
+  m
+  )
 
 # Build tests
 add_executable(tests
@@ -19,4 +21,5 @@ add_executable(tests
   tests.cpp
   )
 target_link_libraries(tests
- m)
+ m
+ )
