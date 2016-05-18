@@ -9,6 +9,7 @@
 #include <iostream>
 
 bool is_even(unsigned int a);
+bool is_odd(unsigned int a);
 
 
 TEST_CASE("describe_factorial", "[aufgabe3]") {
@@ -18,23 +19,21 @@ TEST_CASE("describe_factorial", "[aufgabe3]") {
     *i = std::rand() % 100 + 1; // Zufallszahlen von 0 - 100
   }
   // std::copy(std::begin(vektor), std::end(vektor), std::ostream_iterator<int>(std::cout, "\n"));
-  /* for (std::vector<unsigned int>::iterator i = vektor.begin(); i != vektor.end(); ++i) {
-    if (*i % 2 != 0) {
-      vektor.erase(i); // funktioniert nicht; vielleicht weil die groesse des Vektors sich staendig aendern wuerde?
-    }
-  } */
+
+  vektor.erase(std::remove_if(vektor.begin(), vektor.end(), is_odd), vektor.end()); // erase 
+
   // std::copy(std::begin(vektor), std::end(vektor), std::ostream_iterator<int>(std::cout, "\n"));
   
-  std::vector<unsigned int> vektor_even(0); // Keine Loesung ohne zweiten Vektor gefunden :-(
+  /* std::vector<unsigned int> vektor_even(0); // Keine Loesung ohne zweiten Vektor gefunden :-(
   for (std::vector<unsigned int>::iterator i = vektor.begin(); i != vektor.end(); ++i) {
     if (*i % 2 == 0) {
       vektor_even.push_back(*i); 
     }
-  } 
+  } */
   // std::copy(std::begin(vektor_even), std::end(vektor_even), std::ostream_iterator<int>(std::cout, "\n"));
 
   // Wendet die Funktion is_even auf alle Eintrage von vektor_even an
-  REQUIRE(std::all_of(vektor_even.begin(), vektor_even.end(), is_even)); 
+  REQUIRE(std::all_of(vektor.begin(), vektor.end(), is_even)); 
 
 }
 
@@ -50,4 +49,12 @@ bool is_even(unsigned int a) {
   }
 
   else return false;
+}
+
+bool is_odd(unsigned int a) {
+  if (a % 2 == 0) {
+    return false;
+  }
+
+  else return true;
 }
