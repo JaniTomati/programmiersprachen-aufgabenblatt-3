@@ -18,6 +18,7 @@ target_link_libraries(example
 # Build aufgabe5
 add_executable(aufgabe5
   aufgabe5.cpp
+  circle.cpp
   )
 target_link_libraries(example
   m
