@@ -1,4 +1,5 @@
 // swap.hpp (Programmiersprachen Aufgabenblatt 3)
+// vertauscht zwei Objekte gleichen Typs
 
 #ifndef SWAP_HPP
 #define SWAP_HPP

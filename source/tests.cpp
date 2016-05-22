@@ -2,9 +2,14 @@
 
 #define CATCH_CONFIG_RUNNER
 #include <catch.hpp>
+#include <cmath>
+#include <algorithm>
 
 
 // * --------------- VEC2-Tests --------------- * //
+TEST_CASE("describe_factorial", "[aufgabe3]") {
+	
+}
 
 	
 

@@ -21,6 +21,9 @@ public:
 	bool operator == (Circle const& c) const;
 	bool operator < (Circle const& c) const;
 	bool operator > (Circle const& c) const;
+	bool operator() (Circle const& c1, Circle const& c2) const {
+            return c1.get_radius() < c2.get_radius();
+}
 
 private:
 	// Membervariablen
